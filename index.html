@@ -66,27 +66,27 @@ PROMAREES
 
 <div class="stat">
 🏆 <strong>India Rank</strong><br>
-#1
+#<span id="indiaRank">1</span>
 </div>
 
 <div class="stat">
 🌍 <strong>World Rank</strong><br>
-#2
+#<span id="worldRank">2</span>
 </div>
 
 <div class="stat">
 ⭐ <strong>Level</strong><br>
-87
+<span id="level">87</span>
 </div>
 
 <div class="stat">
 🎮 <strong>Matches</strong><br>
-10,568
+<span id="matches">10,568</span>
 </div>
 
 <div class="stat">
 👑 <strong>Wins</strong><br>
-9,879
+<span id="wins">9,879</span>
 </div>
 
 <div class="badge" onclick="fireworks()">
@@ -245,9 +245,6 @@ Join My Discord
 </footer>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
-
-<script src="firebase.js"></script>
-
 <div id="imageViewer" onclick="closeImage()">
     <img id="fullImage">
 </div>
@@ -255,6 +252,16 @@ Join My Discord
 <div id="achievementPopup">
 🏆 Achievement Unlocked!
 </div>
+<script src="firebase.js"></script>
+
+<script>
+alert("Before script.js");
+</script>
+
 <script src="script.js"></script>
-</body>
+
+<script>
+alert("After script.js");
+</script>
+
 </html>
