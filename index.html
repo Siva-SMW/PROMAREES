@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROMAREES</title>
+</head>
+
+<body>
+  <div class="shooting-star"></div>
+<div class="stars"></div>
+<nav class="navbar">
+<h2>PROMAREES</h2>
+
+<a href="#profile">Profile</a>
+
+<a href="#videos">Videos</a>
+
+<a href="#trophies">Trophies</a>
+
+<a href="#contact">Contact</a>
+<button id="themeBtn" onclick="toggleTheme()">🌙 Dark Mode</button>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Search PROMAREES...">
+</div>
+
+</nav>
+
+<div class="header">
+
+<img src="logo.jpg" class="logo">
+
+<h1>
+PROMAREES
+<span class="verified">✔</span>
+</h1>
+
+<p class="subtitle">
+👑 Official Among Us Gaming Profile 👑
+</p>
+
+<div class="online">
+🟢 ONLINE NOW
+</div>
+<section id="profile">
+
+<img src="character.jpg" class="profile-pic">
+
+<h2>PROMAREES <span class="verified">✔</span></h2>
+
+<p>🟢 Online</p>
+<p>🎮 Favorite Game: Among Us</p>
+<p>🌍 Country: 🇮🇳 India</p>
+<p>📅 Joined: 2025</p>
+
+</section>
+</div>
+
+<h2>👑 PROMAREES</h2>
+
+<div class="stat">
+❤️ Followers:
+<span id="followers">0</span>
+</div>
+
+<div class="stat">
+🏆 <strong>India Rank</strong><br>
+#1
+</div>
+
+<div class="stat">
+🌍 <strong>World Rank</strong><br>
+#2
+</div>
+
+<div class="stat">
+⭐ <strong>Level</strong><br>
+87
+</div>
+
+<div class="stat">
+🎮 <strong>Matches</strong><br>
+10,568
+</div>
+
+<div class="stat">
+👑 <strong>Wins</strong><br>
+9,879
+</div>
+
+<div class="badge" onclick="fireworks()">
+🏆 LEGEND PLAYER
+</div>
+
+</div>
+<div class="buttons">
+
+<a href="#gallery" class="btn">📸 Gallery</a>
+
+<a href="#videos" class="btn">🎥 Videos</a>
+
+<a href="#achievements" class="btn">🏆 Achievements</a>
+
+<a href="https://www.youtube.com/" class="btn" target="_blank">▶ YouTube</a>
+
+</div>
+<section>
+
+<h2>🏆 Achievements</h2>
+
+<div class="badge">🥇 India #1</div>
+
+<div class="badge">🌍 World #2</div>
+
+<div class="badge">⭐ Level 87</div>
+
+<div class="badge">🎮 10,568 Matches</div>
+
+<div class="badge">👑 9,879 Wins</div>
+
+</section>
+
+<section id="videos">
+
+<h2>🎥 Videos</h2>
+
+<video width="300" controls>
+    <source src="XRecorder_20260715_02.mp4" type="video/mp4">
+</video>
+
+</section>
+<section id="trophies">
+
+<h2>🏆 Trophy Showcase</h2>
+
+<div class="trophy-card" onclick="unlockAchievement('🥇 India #1 Player')">
+🥇 India #1 Player
+</div>
+
+<div class="trophy-card" onclick="unlockAchievement('🌍 World #2 Player')">
+🌍 World #2 Player
+</div>
+
+<div class="trophy-card" onclick="unlockAchievement('👑 Legend Player')">
+👑 Legend Player
+</div>
+
+<div class="trophy-card" onclick="unlockAchievement('⭐ Level 87')">
+⭐ Level 87
+</div>
+
+<div class="trophy-card" onclick="unlockAchievement('🎮 10,568 Matches')">
+🎮 10,568 Matches
+</div>
+
+<div class="trophy-card" onclick="unlockAchievement('🏅 9,879 Wins')">
+🏅 9,879 Wins
+</div>
+
+</section>
+<section id="clock-section">
+
+<h2>🕒 Current Time</h2>
+
+<div id="clock"></div>
+
+</section>
+<section id="visitors">
+
+<h2>👀 Visitors</h2>
+
+<div id="counter">000001</div>
+
+</section>
+<section id="social">
+
+<h2>🌐 Connect with PROMAREES</h2>
+
+<a href="https://discord.gg/yNkSW6nY" class="social-btn">🎮 Discord</a>
+
+</section>
+<section id="news">
+
+<h2>📢 Latest News</h2>
+
+<div class="news-card">
+<h3>🎉 Website Launched!</h3>
+<p>Welcome to the official PROMAREES gaming website.</p>
+</div>
+
+<div class="news-card">
+<h3>🏆 New Achievement</h3>
+<p>Reached World Rank #2.</p>
+</div>
+
+</section>
+<section id="contact">
+
+<h2>📞 Contact PROMAREES</h2>
+
+<p>👤 Name: PROMAREES</p>
+
+<p>🎮 Discord:
+<a href="https://discord.gg/yNkSW6nY" target="_blank">
+Join My Discord
+</a>
+</p>
+<p>📧 Email: Coming Soon</p>
+
+<p>🌍 Website: https://siva-smw.github.io/PROMAREES/</p>
+
+</section>
+<section id="stats-dashboard">
+
+<h2>📊 Statistics Dashboard</h2>
+
+<div class="progress-box">
+<p>❤️ Followers</p>
+<div class="progress">
+<div class="progress-fill followers-fill"></div>
+</div>
+</div>
+
+<div class="progress-box">
+<p>👑 Wins</p>
+<div class="progress">
+<div class="progress-fill wins-fill"></div>
+</div>
+</div>
+
+<div class="progress-box">
+<p>⭐ Level</p>
+<div class="progress">
+<div class="progress-fill level-fill"></div>
+</div>
+</div>
+
+</section>
+<footer>
+<h3>PROMAREES</h3>
+
+<p>© 2026 All Rights Reserved</p>
+
+</footer>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<script src="firebase.js"></script>
+
+<div id="imageViewer" onclick="closeImage()">
+    <img id="fullImage">
+</div>
+<button id="topBtn" onclick="topFunction()">⬆</button>
+<div id="achievementPopup">
+🏆 Achievement Unlocked!
+</div>
+<script src="script.js"></script>
+</body>
+</html>

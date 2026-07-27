@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>PROMAREES Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1>👑 PROMAREES Dashboard</h1>
+
+<div class="card">
+
+<h2>Website Statistics</h2>
+
+<label>❤️ Followers</label><br>
+<input type="number" id="followers"><br><br>
+
+<label>🏆 India Rank</label><br>
+<input type="number" id="india"><br><br>
+
+<label>🌍 World Rank</label><br>
+<input type="number" id="world"><br><br>
+
+<label>⭐ Level</label><br>
+<input type="number" id="level"><br><br>
+
+<label>🎮 Matches</label><br>
+<input type="number" id="matches"><br><br>
+
+<label>👑 Wins</label><br>
+<input type="number" id="wins"><br><br>
+
+<button onclick="alert('Button clicked'); saveData();">
+    💾 Save Changes
+</button>
+
+</div>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<script src="firebase.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

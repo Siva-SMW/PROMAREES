@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PROMAREES Admin</title>
+
+<style>
+body{
+    background:#111;
+    color:white;
+    font-family:Arial;
+    text-align:center;
+    padding-top:80px;
+}
+
+input{
+    width:280px;
+    padding:12px;
+    margin:10px;
+    border:none;
+    border-radius:10px;
+}
+
+button{
+    padding:12px 30px;
+    background:#8a2be2;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🔒 PROMAREES Admin Login</h1>
+
+<input type="email" id="email" placeholder="Email"><br>
+
+<input type="password" id="password" placeholder="Password"><br>
+
+<button onclick="login()">Login</button>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyB6XhAO2wHIzrSUBCtcA6ox5xqfB5CUgUQ",
+  authDomain: "smw-2012.firebaseapp.com",
+  projectId: "smw-2012",
+  storageBucket: "smw-2012.firebasestorage.app",
+  messagingSenderId: "97208499766",
+  appId: "1:97208499766:web:59beb65aea44e0cbfc6297"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+function login(){
+
+let email=document.getElementById("email").value;
+let password=document.getElementById("password").value;
+
+firebase.auth().signInWithEmailAndPassword(email,password)
+.then(function(){
+    alert("✅ Login Successful!");
+    window.location="dashboard.html";
+})
+.catch(function(error){
+    alert(error.message);
+});
+
+}
+</script>
+<script src="script.js"></script>
+</body>
+</html>
