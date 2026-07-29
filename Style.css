@@ -491,3 +491,23 @@ box-shadow:0 0 20px cyan;
 button:hover{
 transform:scale(1.05);
 }
+#announcement{
+    width:100%;
+    background:linear-gradient(90deg,#ff9800,#ff5722);
+    color:white;
+    text-align:center;
+    padding:12px;
+    font-size:18px;
+    font-weight:bold;
+    box-shadow:0 0 15px rgba(255,152,0,0.7);
+    animation:announcementGlow 2s infinite alternate;
+}
+
+@keyframes announcementGlow{
+    from{
+        box-shadow:0 0 10px #ff9800;
+    }
+    to{
+        box-shadow:0 0 25px #ff5722;
+    }
+}

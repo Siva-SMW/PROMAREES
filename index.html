@@ -6,7 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PROMAREES</title>
 </head>
-
+<div id="announcement">
+📢 Welcome to PROMAREES!
+</div>
 <body>
   <div class="shooting-star"></div>
 <div class="stars"></div>
@@ -76,17 +78,17 @@ PROMAREES
 
 <div class="stat">
 ⭐ <strong>Level</strong><br>
-<span id="level">87</span>
+<span id="level">187</span>
 </div>
 
 <div class="stat">
 🎮 <strong>Matches</strong><br>
-<span id="matches">10,568</span>
+<span id="matches">10,860</span>
 </div>
 
 <div class="stat">
 👑 <strong>Wins</strong><br>
-<span id="wins">9,879</span>
+<span id="wins">9,560</span>
 </div>
 
 <div class="badge" onclick="fireworks()">
@@ -111,17 +113,29 @@ PROMAREES
 
 <div class="badge">🥇 India #1</div>
 
-<div class="badge">🌍 World #2</div>
+<div class="badge">🌍 World #1</div>
 
-<div class="badge">⭐ Level 87</div>
+<div class="badge">⭐ Level 187</div>
 
-<div class="badge">🎮 10,568 Matches</div>
+<div class="badge">🎮 10,860 Matches</div>
 
-<div class="badge">👑 9,879 Wins</div>
+<div class="badge">👑 9,560 Wins</div>
 
 </section>
 
 <section id="videos">
+  
+  <section id="gallery">
+
+<h2>📸 Gallery</h2>
+
+<img id="gallery1"
+     src=""
+     alt="Gallery Image"
+     width="300"
+     onclick="openImage(this.src)">
+
+</section>
 
 <h2>🎥 Videos</h2>
 
@@ -138,24 +152,24 @@ PROMAREES
 🥇 India #1 Player
 </div>
 
-<div class="trophy-card" onclick="unlockAchievement('🌍 World #2 Player')">
-🌍 World #2 Player
+<div class="trophy-card" onclick="unlockAchievement('🌍 World #1 Player')">
+🌍 World #1 Player
 </div>
 
 <div class="trophy-card" onclick="unlockAchievement('👑 Legend Player')">
 👑 Legend Player
 </div>
 
-<div class="trophy-card" onclick="unlockAchievement('⭐ Level 87')">
-⭐ Level 87
+<div class="trophy-card" onclick="unlockAchievement('⭐ Level 187')">
+⭐ Level 187
 </div>
 
-<div class="trophy-card" onclick="unlockAchievement('🎮 10,568 Matches')">
-🎮 10,568 Matches
+<div class="trophy-card" onclick="unlockAchievement('🎮 10,860 Matches')">
+🎮 10,860 Matches
 </div>
 
-<div class="trophy-card" onclick="unlockAchievement('🏅 9,879 Wins')">
-🏅 9,879 Wins
+<div class="trophy-card" onclick="unlockAchievement('🏅 9,560 Wins')">
+🏅 9,560 Wins
 </div>
 
 </section>
@@ -182,7 +196,19 @@ PROMAREES
 </section>
 <section id="news">
 
-<h2>📢 Latest News</h2>
+<section id="news">
+
+<h2>📰 Latest News</h2>
+
+<div class="news-card">
+
+<h3 id="newsTitle">Loading...</h3>
+
+<p id="newsDate">Loading...</p>
+
+</div>
+
+</section>
 
 <div class="news-card">
 <h3>🎉 Website Launched!</h3>
@@ -191,7 +217,7 @@ PROMAREES
 
 <div class="news-card">
 <h3>🏆 New Achievement</h3>
-<p>Reached World Rank #2.</p>
+<p>Reached World Rank #1.</p>
 </div>
 
 </section>

@@ -24,7 +24,25 @@ document.getElementById("matches").innerHTML =
 doc.data().matches.toLocaleString();
 
 document.getElementById("wins").innerHTML =
-doc.data().wins.toLocaleString();
+(doc.data().wins || 0).toLocaleString();
+document.getElementById("announcement").innerHTML =
+"📢 " + doc.data().announcement;
+document.getElementById("newsTitle").innerHTML =
+doc.data().newsTitle;
+
+document.getElementById("newsDate").innerHTML =
+"📅 " + doc.data().newsDate;
+document.getElementById("announcement").innerHTML =
+"📢 " + doc.data().announcement;
+
+document.getElementById("newsTitle").innerHTML =
+doc.data().newsTitle;
+
+document.getElementById("newsDate").innerHTML =
+"📅 " + doc.data().newsDate;
+
+document.getElementById("gallery1").src =
+doc.data().gallery1;
         } else {
 
             alert("Document not found");
