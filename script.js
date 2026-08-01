@@ -8,12 +8,15 @@ window.onload = function () {
         alert("Reached Firestore");
 
         if(doc.exists){
+          document.getElementById("likes").innerHTML =
+doc.data().likes;
 
             document.getElementById("followers").innerHTML =
             doc.data().followers.toLocaleString();
             
 document.getElementById("indiaRank").innerHTML =
 doc.data().indiaRank;
+
 document.getElementById("worldRank").innerHTML =
 doc.data().worldRank;
 
@@ -57,3 +60,74 @@ doc.data().gallery1;
     });
 
 };
+function addLike() {
+
+    db.collection("website").doc("stats").update({
+        likes: firebase.firestore.FieldValue.increment(1)
+    })
+    .then(function () {
+
+        db.collection("website").doc("stats").get()
+        .then(function(doc) {
+            document.getElementById("likes").innerHTML =
+            doc.data().likes;
+        });
+
+    })
+    .catch(function(error) {
+        alert(error.message);
+    });
+
+}
+db.collection("comments").get()
+.then(function(snapshot){
+
+    let html = "";
+
+    snapshot.forEach(function(doc){
+
+        let data = doc.data();
+
+        html += `
+<div class="comment-card">
+    <h3>👤 ${data.name}</h3>
+    <p>${data.message}</p>
+
+    <button class="comment-like-btn"
+onclick="likeComment('${doc.id}')">
+❤️ <span>${data.likes || 0}</span>
+</button>
+
+</div>
+`;
+
+    });
+
+    document.getElementById("commentsList").innerHTML = html;
+
+})
+.catch(function(error){
+    console.log(error);
+});
+function likeComment(id){
+
+    db.collection("comments").doc(id).update({
+        likes: firebase.firestore.FieldValue.increment(1)
+    }).then(function(){
+
+        db.collection("comments").doc(id).get()
+.then(function(doc){
+
+    let button = event.target;
+
+    if(button.tagName != "BUTTON"){
+        button = button.parentElement;
+    }
+
+    button.innerHTML = "❤️ " + doc.data().likes;
+
+});
+
+    });
+
+}
