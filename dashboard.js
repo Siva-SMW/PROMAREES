@@ -24,9 +24,42 @@ alert("Data object created");
 
     db.collection("website").doc("stats").set(data, { merge: true })
     .then(function () {
-        alert("✅ Saved!");
+const toast = document.getElementById("toast");
+
+toast.classList.add("show");
+
+setTimeout(function(){
+    toast.classList.remove("show");
+},2000);
     })
     .catch(function (error) {
         alert("❌ " + error.message);
     });
 }
+db.collection("website").doc("stats").get()
+.then(function(doc){
+
+    if(doc.exists){
+
+        document.getElementById("followers").value = doc.data().followers || 0;
+        document.getElementById("india").value = doc.data().indiaRank || 0;
+        document.getElementById("world").value = doc.data().worldRank || 0;
+        document.getElementById("level").value = doc.data().level || 0;
+        document.getElementById("matches").value = doc.data().matches || 0;
+        document.getElementById("wins").value = doc.data().wins || 0;
+
+        document.getElementById("announcement").value =
+            doc.data().announcement || "";
+
+        document.getElementById("newsTitle").value =
+            doc.data().newsTitle || "";
+
+        document.getElementById("newsDate").value =
+            doc.data().newsDate || "";
+
+        document.getElementById("gallery1").value =
+            doc.data().gallery1 || "";
+
+    }
+
+});

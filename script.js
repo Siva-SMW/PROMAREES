@@ -1,11 +1,9 @@
 window.onload = function () {
 
-    alert("script.js loaded");
 
     db.collection("website").doc("stats").get()
     .then(function(doc){
 
-        alert("Reached Firestore");
 
         if(doc.exists){
           document.getElementById("likes").innerHTML =
@@ -30,13 +28,6 @@ document.getElementById("wins").innerHTML =
 (doc.data().wins || 0).toLocaleString();
 document.getElementById("announcement").innerHTML =
 "📢 " + doc.data().announcement;
-document.getElementById("newsTitle").innerHTML =
-doc.data().newsTitle;
-
-document.getElementById("newsDate").innerHTML =
-"📅 " + doc.data().newsDate;
-document.getElementById("announcement").innerHTML =
-"📢 " + doc.data().announcement;
 
 document.getElementById("newsTitle").innerHTML =
 doc.data().newsTitle;
@@ -48,14 +39,12 @@ document.getElementById("gallery1").src =
 doc.data().gallery1;
         } else {
 
-            alert("Document not found");
 
         }
 
     })
     .catch(function(error){
 
-        alert(error.message);
 
     });
 
@@ -93,10 +82,17 @@ db.collection("comments").get()
     <h3>👤 ${data.name}</h3>
     <p>${data.message}</p>
 
-    <button class="comment-like-btn"
+<button class="comment-like-btn"
 onclick="likeComment('${doc.id}')">
-❤️ <span>${data.likes || 0}</span>
+❤️ ${data.likes || 0}
 </button>
+
+<button class="reply-btn"
+onclick="replyComment('${doc.id}')">
+💬 Reply
+</button>
+
+<div id="replyBox-${doc.id}"></div>
 
 </div>
 `;
@@ -131,3 +127,138 @@ function likeComment(id){
     });
 
 }
+function updateClock() {
+
+    const clock = document.getElementById("clock");
+
+    if (!clock) return;
+
+    const now = new Date();
+
+    clock.innerHTML = now.toLocaleTimeString("en-IN", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+    });
+}
+
+window.addEventListener("load", function () {
+
+    updateClock();
+
+    setInterval(updateClock, 1000);
+
+    randomVisitors();
+
+    setInterval(randomVisitors, 5000);
+    
+    function randomVisitors(){
+
+    let number = Math.floor(Math.random()*900000)+100000;
+
+    document.getElementById("counter").innerHTML = number.toLocaleString();
+
+}
+
+});
+function replyComment(id){
+
+    alert("🚧 Reply system is coming soon!");
+
+}
+window.addEventListener("load", function(){
+
+    let progress = 0;
+
+    const fill = document.getElementById("loader-fill");
+    const text = document.getElementById("loadingText");
+    const loader = document.getElementById("loader");
+
+    if(!fill || !text || !loader) return;
+
+    const loading = setInterval(function(){
+
+        progress++;
+
+        fill.style.width = progress + "%";
+
+        if(progress < 15){
+            text.innerHTML = "🚀 Initializing PROMAREES...";
+        }
+        else if(progress < 35){
+            text.innerHTML = "🔥 Connecting to Firebase...";
+        }
+        else if(progress < 55){
+            text.innerHTML = "🎮 Loading Game Stats...";
+        }
+        else if(progress < 75){
+            text.innerHTML = "🖼️ Loading Gallery...";
+        }
+        else if(progress < 90){
+            text.innerHTML = "💬 Loading Comments...";
+        }
+        else{
+            text.innerHTML = "🏆 Almost Ready...";
+        }
+
+        if(progress >= 100){
+
+            clearInterval(loading);
+
+            text.innerHTML = "✅ Welcome to PROMAREES!";
+            const lightning = document.getElementById("lightning");
+
+if(lightning){
+
+    lightning.classList.add("flash");
+
+    setTimeout(function(){
+
+        lightning.classList.remove("flash");
+
+    },250);
+
+}
+            const particles = document.getElementById("particles");
+
+for(let i=0;i<40;i++){
+
+    const spark = document.createElement("div");
+
+    spark.className = "spark";
+
+    spark.style.left = "50%";
+    spark.style.top = "50%";
+
+    spark.style.setProperty("--x",
+        (Math.random()*600-300)+"px");
+
+    spark.style.setProperty("--y",
+        (Math.random()*600-300)+"px");
+
+    particles.appendChild(spark);
+
+    setTimeout(function(){
+
+        spark.remove();
+
+    },1000);
+
+}
+
+            setTimeout(function(){
+
+                loader.style.transition = "opacity 0.8s";
+                loader.style.opacity = "0";
+
+                setTimeout(function(){
+                    loader.style.display = "none";
+                },800);
+
+            },1000);
+
+        }
+
+    },20);
+
+});

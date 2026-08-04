@@ -9,6 +9,21 @@
 <div id="announcement">
 📢 Welcome to PROMAREES!
 </div>
+<div id="loader">
+<h1 id="logo">
+    <span id="crown">👑</span>
+    PROMAREES
+</h1>
+    <div class="loader-bar">
+        <div id="loader-fill"></div>
+    </div>
+    <p id="loadingText">Loading...</p>
+    
+    <div id="particles"></div>
+</div>
+
+<div id="lightning"></div>
+
 <body>
   <div class="shooting-star"></div>
 <div class="stars"></div>
@@ -182,14 +197,18 @@ PROMAREES
 
 <h2>🕒 Current Time</h2>
 
-<div id="clock"></div>
+<div class="digital-clock">
+    <span id="clock">00:00:00</span>
+</div>
 
 </section>
 <section id="visitors">
 
 <h2>👀 Visitors</h2>
 
-<div id="counter">000001</div>
+<div class="visitor-box">
+    <span id="counter">000001</span>
+</div>
 
 </section>
 <section id="social">
@@ -295,14 +314,6 @@ Loading comments...
 </div>
 <script src="firebase.js"></script>
 
-<script>
-alert("Before script.js");
-</script>
-
 <script src="script.js"></script>
-
-<script>
-alert("After script.js");
-</script>
 
 </html>
